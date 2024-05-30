@@ -20,6 +20,15 @@ def handleResponse(message) -> str:
         addRecord(message)
         return 'Added new head to head matchup'
 
+    if p_message.__contains('user'):
+      user = p_message.split(' ')[2:]
+      if p_message.__contains__('add'):
+        addUser(user)
+        return 'Added user %s to player list' %user
+      else if  p_message.__contains__('remove')
+        removeUser(user)
+        return 'Removed user %s from player list' %user
+
     if p_message.__contains__('vote'):
       recordVote(p_message)
       return 'Vote is recorded'
@@ -36,7 +45,7 @@ def handleResponse(message) -> str:
 
 #=========================================
 # Function to record Heisman Votes
-#
+# Syntax: ~Heisman Vote [player name] [school]
 #=========================================
 
 def recordVote(message):
@@ -49,7 +58,7 @@ def recordVote(message):
 
 #=========================================
 # Function to output Heisman winner
-#
+# Syntax: ~Heisman Winner
 # ========================================
 
 def totalVotes() -> str:
@@ -64,7 +73,7 @@ def totalVotes() -> str:
 
 #========================================
 # Function to reset Heisman voting
-#
+# Syntax: ~reset
 #========================================
   
 def newSeason():
@@ -73,7 +82,8 @@ def newSeason():
 
 #=========================================
 # Function to output Head to Head records
-#
+# Syntax (all): ~Show Head to Head
+# Syntax (specified): ~Show Head to Head [user1] [user2]
 #=========================================
 
 def readRecord(message) -> str:
@@ -83,7 +93,7 @@ def readRecord(message) -> str:
 
 #========================================
 # Function to update Head to Head records
-# 
+# Syntax: ~Update Head to Head [winning user] [losing user]
 #========================================
 
 def updateRecord(message) -> str:
@@ -93,7 +103,7 @@ def updateRecord(message) -> str:
 
 #=======================================
 # Function to add new Head to Head match-up
-#
+# Syntax: ~Add Head to Head [user1] [user2]
 #=======================================
 
 def addRecord(message) -> str:
@@ -110,4 +120,21 @@ def addRecord(message) -> str:
     history.close()
     
   return 'Added new head to head matchup'
-  
+
+  #=====================================
+  # Function to add new user to player list
+  # Syntax: ~Add [user name] [school]
+  #=====================================
+
+  def addUser(user):
+
+    return
+
+  #=====================================
+  # Function to remove users from player list
+  # Syntax: ~Remove [user name]
+  #=====================================
+
+  def removeUser(user):
+
+    return
