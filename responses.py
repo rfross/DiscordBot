@@ -10,7 +10,7 @@ def handleResponse(message) -> str:
 
     if p_message.__contains__('head to head'):
       message = p_message.split(' ')[1:]
-      if p_message.__contains__('display'):
+      if p_message.__contains__('display') or p_message.__contains__('show'):
         record = readRecord(message)
         return record
       else if p_message.__contains__('update')
